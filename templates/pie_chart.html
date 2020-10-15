@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualization</title>
+    <link rel="stylesheet" href="./static/main.css">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.bundle.js"></script>
+</head>
+<body id="body2">
+    <div id="vue-app">
+        <div class="list">
+            <div class="item1"><a href ="{{url_for('visualization')}}" class="span_selected">Visualization</a></div>
+            <div class="item2"><a href ="{{url_for('detail')}}" class="span_list">Details</a></div>
+            <div class="item3"><a href ="{{url_for('testing')}}" class="span_list">Testing</a></div>
+        </div>
+
+        <div class="boxes" v-if="visual_tf">
+
+            <div class="box1">
+                <div class="bar_chart">
+                    <canvas id="myChart" style="height:50vh; width:50vw">
+                    </canvas>
+                </div>
+
+                <div class="pie_chart">
+                    <canvas id="myChart_overall" style="height:50vh; width:50vw">
+                    </canvas>
+
+                </div>
+            </div>
+
+            <div class="smallboxes">
+                <div class="smallbox1">
+                    <div>
+                        <canvas id="myChart1" style="height:60vh; width:30vw">
+                        </canvas>
+                    </div>
+                </div>
+
+                <div class="smallbox2">
+                    <div>
+                        <canvas id="myChart2" style="height:60vh; width:30vw">
+                        </canvas>
+                    </div>
+                    
+                </div>
+
+                <div class="smallbox3">
+                    <div>
+                        <canvas id="myChart3" style="height:60vh; width:30vw">
+                        </canvas>
+                    </div>
+                    
+                </div>
+
+                <div class="smallbox4">
+                    <div>
+                        <canvas id="myChart4" style="height:60vh; width:30vw">
+                        </canvas>
+                    </div> 
+                    
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+    <script src="./static/visualization.js"></script>
+    <!-- <script>
+        (function () {
+            'use strict';
+            var type = 'bar';
+            // var test ={z:'haha'};
+
+            
+            // t.update_visual()
+            window.alert(test)
+            // for(var i =0; i<test.length; i++){
+            //     window.alert(test[i])
+            // }
+            
+            var data = {
+                labels: ['Overall','Aspect1','Aspect2','Aspect3','Aspect4'],
+                datasets: [
+                    {
+                        label: 'Negative',
+                        data: [100, 200, 400, 800, 1600],
+                        borderColor: 'red',
+                        borderWidth: 1,
+                        // fill: true,
+                        // backgroundColor: 'rgba(128,0,0,0)',
+                        pointStyle: 'rect', //circle, cross, crossRot, dash, line, rect, rectRounded, rectRot, star, triangle
+                        pointRadius: 2,
+                    },
+                    {
+                        label: 'Positive',
+                        data: [50, 100, 200, 400, 600],
+                        borderColor: 'green',
+                        borderWidth: 1,
+                        // fill: true,
+                        // backgroundColor: 'rgba(0,128,0,0)',
+                        pointStyle: 'triangle',
+                        pointRadius: 2,
+                    },
+
+                    {
+                        label: 'Neutral',
+                        data: [100, 200, 400, 800, 1600],
+                        borderColor: 'yellow',
+                        borderWidth: 1,
+                        // fill: true,
+                        // backgroundColor: 'rgba(128,0,0,0)',
+                        pointStyle: 'circle', //circle, cross, crossRot, dash, line, rect, rectRounded, rectRot, star, triangle
+                        pointRadius: 2,
+                    },
+                ]
+            };
+
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var chart = new Chart(ctx, {
+                type: type,
+                data: data,
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                suggestedMin: 0,
+                                suggestedMax: 2000,
+                                // stepSize: 400,
+                            }
+                        }]
+                    },
+
+                    title: {
+                        display: true,
+                        text: 'Profile',
+                        fontColor: 'blue',
+                        fontSize: '20',
+                        position:'top'
+                    },
+                    // legend:{
+                    //     position:'right',
+                    //     display:true
+                    // }
+                }
+            });
+        })();
+    </script> -->
+</body>
+</html>

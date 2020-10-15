@@ -166,11 +166,11 @@ class Asp_Sentiment_classifiers:
         predictions = []
         for pred in y_pred_bool:
             if pred == 0:
-                predictions.append('Positive')
+                predictions.append('positive')
             elif pred == 1:
-                predictions.append('Neutral')
+                predictions.append('neutral')
             else:
-                predictions.append('Negative')
+                predictions.append('negative')
         reviews_df['overall_sentiment'] = predictions
 
 
@@ -178,36 +178,37 @@ class Asp_Sentiment_classifiers:
 
         def get_labels(y_pred):     
             if y_pred == 0:
-                return 'Positive'
+                return 'positive'
             elif y_pred == 1:
-                return 'Neutral'
+                return 'neutral'
             else:
-                return 'Negative'
+                return 'negative'
 
 
-        reviews_df['staff_sent'] = ''
-        reviews_df['amenities_sent'] = ''
-        reviews_df['condition_sent'] = ''
-        reviews_df['clean_sent'] = ''
-
+        reviews_df['staff_sent'] = None
+        reviews_df['amenities_sent'] = None
+        reviews_df['condition_sent'] = None
+        reviews_df['clean_sent'] = None
+        print('Running... Please wait...')
         for i, aspect in zip(range(len(X_data)), reviews_df['aspect']):
             y_pred = -1
-            if "Staff " in aspect:
+            if "a1" in aspect:
                 y_pred = self.staff_model.predict(X_data[i:i+1], batch_size=5, verbose=0)
                 y_pred_bool = np.argmax(y_pred, axis=1)
                 reviews_df['staff_sent'][i] = get_labels(y_pred_bool) 
-            elif "Amenities " in aspect:
+            elif "a2" in aspect:
                 y_pred = self.amenities_model.predict(X_data[i:i+1], batch_size=5, verbose=0)
                 y_pred_bool = np.argmax(y_pred, axis=1)
                 reviews_df['amenities_sent'][i] = get_labels(y_pred_bool) 
-            elif "Condition " in aspect:
+            elif "a3" in aspect:
                 y_pred = self.condition_model.predict(X_data[i:i+1], batch_size=5, verbose=0)
                 y_pred_bool = np.argmax(y_pred, axis=1)
                 reviews_df['condition_sent'][i] = get_labels(y_pred_bool) 
-            elif "Cleanliness " in aspect:
+            elif "a4" in aspect:
                 y_pred = self.cleanliness_model.predict(X_data[i:i+1], batch_size=5, verbose=0)
                 y_pred_bool = np.argmax(y_pred, axis=1)
                 reviews_df['clean_sent'][i] = get_labels(y_pred_bool) 
+            
             # else:
             #     y_pred = self.overall_model.predict(X_data, batch_size=5, verbose=1)
            
@@ -236,13 +237,13 @@ class Asp_Sentiment_classifiers:
 
         for index, values in zip(range(len(y_pred_bool)), y_pred_bool):
             if values[0] == 1:
-                predictions[index].append('Staff ')
+                predictions[index].append('a1')
             if values[1] == 1:
-                predictions[index].append('Amenities ')
+                predictions[index].append('a2')
             if values[2] == 1:
-                predictions[index].append('Condition ')
+                predictions[index].append('a3')
             if values[3] == 1:
-                predictions[index].append('Cleanliness ')
+                predictions[index].append('a4')
 
         reviews_df['aspect'] = predictions
 

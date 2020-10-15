@@ -1,0 +1,432 @@
+html{
+    height:100%;
+}
+#vue-app{
+    height:100%;
+    /* width:100%; */
+}
+#vue-testing{
+    height:100%;
+    /* width:100%; */
+}
+
+#vue-detail{
+    height:100%;
+}
+
+
+/* home_page */
+#body1{
+    background: #43425D;
+    text-align:center;
+    height:100%;
+    width:100%;
+    margin:0;
+}
+
+.frame{
+    background: #FFFFFF;
+	width: 100%;
+	height: 60%;
+	margin-top: 2.5%;
+    /* margin-bottom: 1%; */
+    padding-top:7%
+}
+
+.span1{
+    font-size:500%;
+    font-weight:bold;
+    color:#DCD1D1;
+}
+
+.span2{
+    font-size:400%;
+    font-weight:bold;
+    color:#5E51D2;
+    /* top:50px; */
+}
+
+.button1{
+    font-size:200%;
+    border-radius: 10px;
+    border: 1px solid #707070;
+    opacity: 1;
+    margin-top: 3%;
+    text-decoration:none
+}
+
+
+
+/* pie_chart */
+#body2{
+    background: #F0F0F7;
+    height:100%;
+    width:100%;
+    /* margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0; */
+    margin:0;
+}
+
+.list{
+    background: #43425D;
+    height:100%;
+    width:15%;
+    display: inline-block;
+}
+
+.item1{
+    background:#37355E;
+    text-align:center;
+    width:100%;
+    height:7%;
+    padding-top:10%;
+}
+
+.item2{
+    background:#43425D;
+    text-align:center;
+    width:100%;
+    height:7%;
+    /* margin-top: 10%; */
+    padding-top:10%;
+}
+
+.item3{
+    background:#37355E;
+    text-align:center;
+    width:100%;
+    height:7%;
+    padding-top:10%;
+}
+
+.span_list{
+    color:#FFFFFF;
+    /* font-weight:bold; */
+    font-size:150%;
+    text-decoration:none
+}
+.span_selected{
+    color:#FFFFFF;
+    font-weight:bold;
+    font-size:180%;
+    text-decoration:none
+}
+
+.boxes{
+    /* background:#FFFFFF; */
+    padding-top: 2%;
+    width:80%;
+    height:85%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.box1{
+    background:#F0FFFF;
+    width:93.6%;
+    height:53%;
+    margin-left: 6%;
+}
+
+.smallboxes{
+    /* background:#FFFFFF; */
+    width:93.6%;
+    height:39%;
+    margin-left: 6%;
+    margin-top: 2%;
+}
+
+.smallbox1{
+    float: left;
+    background:#F0FFFF;
+    /* display: inline-block; */
+    width:23%;
+    height:110%;
+}
+
+.smallbox2{
+    background:#F0FFFF;
+    display: inline-block;
+    width:23%;
+    height:110%;
+    margin-left: 2.3%;
+}
+
+.smallbox3{
+    background:#F0FFFF;
+    display: inline-block;
+    width:23%;
+    height:110%;
+    /* margin-left: 2%; */
+    margin-left: 2.3%;
+}
+
+.smallbox4{
+    background:#F0FFFF;
+    display: inline-block;
+    width:23%;
+    height:110%;
+    margin-left: 2.3%;
+}
+
+.boxtitle{
+    font-weight:bold ;
+    font-style: italic;
+    color:#707070;
+    font-size:150%;
+    /* margin: auto 0; */
+    margin-left: 29%;
+    /* padding-left: 32%; */
+    /* text-align:center; */
+}
+
+/* #myChart_overall_test{
+  display: block;
+  background-color: lightyellow;
+} */
+
+.bar_chart{
+    width:50%;
+    height:70%;
+    /* display: inline-block; */
+    /* vertical-align: top; */
+}
+
+.pie_chart{
+    width:40%;
+    height:60%;
+    display: inline-block;
+    /* vertical-align: top;  */
+    /* padding-left: 50%; */
+    position: absolute; right:5%; top:5%;
+}
+
+
+
+/* details */
+.details{
+    padding-top: 1%;
+    width:80%;
+    height:85%;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 2.3%;
+}
+
+.info{
+    background:#FFFFFF;
+    width: 100%;
+    height: 90%;
+    margin-top: 2%;
+    overflow: auto;
+}
+
+/* .intro{
+    font-size:150%;
+    margin-right: 2%;
+    font-style: italic;
+} */
+
+
+.dropdown1{
+    padding-right: 3%;
+    /* position: absolute; right:22%; */
+    display: inline-block;
+    /* padding-left: 35%; */
+    
+
+}
+.dropdown2{
+    padding-right: 3%;
+    /* position: absolute; right:10%; */
+    display: inline-block;
+}
+
+.item_list{
+    width: 100%;
+    height:20%;
+    border: 1px solid #707070;
+    display: inline-block;
+    color: #000000;
+}
+
+/* .list1_available form{
+    width: 100%;
+    height:200%;
+    border: 1px solid #707070;
+}
+
+.list2_available form{
+    width: 100%;
+    height:200%;
+    border: 1px solid #707070;
+} */
+
+.dropdown_list{
+  /* width: 30%;
+  height:15%; */
+  /* border: 1px solid #707070; */
+  display: inline-block;
+  padding-right: 5%;
+}
+
+img{
+  display: inline-block;
+}
+
+/* 王睁的代码 */
+.wrap-table100 {
+    width: 100%;
+}
+
+table {
+  border-spacing: 1;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+table * {
+  position: relative;
+}
+table td, table th {
+  padding-left: 8px;
+}
+table thead tr {
+  height: 60px;
+  background: #36304a;
+}
+table tbody tr {
+  height: 50px;
+}
+table tbody tr:last-child {
+  border: 0;
+}
+table td, table th {
+  text-align: left;
+}
+table td.l, table th.l {
+  text-align: right;
+}
+table td.c, table th.c {
+  text-align: center;
+}
+table td.r, table th.r {
+  text-align: center;
+}
+
+
+.table100-head th{
+  font-family: OpenSans-Regular;
+  font-size: 18px;
+  color: #fff;
+  line-height: 1.2;
+  font-weight: unset;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+tbody tr {
+  font-family: OpenSans-Regular;
+  font-size: 15px;
+  color: #808080;
+  line-height: 1.2;
+  font-weight: unset;
+}
+
+tbody tr:hover {
+  color: #555555;
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+.column1 {
+  width: 160px;
+  padding-left: 40px;
+}
+
+.column2 {
+  width: 160px;
+}
+
+.column3 {
+  width: 200px;
+}
+
+.column4 {
+  width: 110px;
+  text-align: right;
+}
+
+.column5 {
+  width: 180px;
+  text-align: right;
+}
+
+.column6 {
+  width: 180px;
+  text-align: right;
+  padding-right: 62px;
+}
+
+
+/* testing */
+.box2{
+    background:#FFFFFF;
+    width:70%;
+    height:15%;
+    margin-left: 6%;
+    /* overflow-y: auto; */
+}
+
+.button2{
+    position: absolute; right:15%;top: 1.5%;
+    font-size:200%;
+    border-radius: 10px;
+    border: 1px solid #707070;
+    opacity: 1;
+    margin-top: 3%;
+}
+
+.box3{
+    background:#F0FFFF;
+    width:93%;
+    height:40%;
+    margin-top: 2%;
+    margin-left: 6%;
+}
+
+.box4{
+    background:#FFFFFF;
+    width:93%;
+    height:40%;
+    margin-top: 2%;
+    margin-left: 6%;
+    overflow-y: auto;
+}
+
+.input{
+    width:100%;
+    height:30%;
+    border: 1px solid #C0C0C0;
+}
+
+.overall_chart{
+  width:93%;
+  height:40%;
+}
+.charts{
+  width:15%;
+  height:20%;
+  display: inline-block;
+  /* vertical-align: top; */
+  /* padding-left: -15%; */
+  padding-right: 2%;
+  padding-left: 2%;
+}

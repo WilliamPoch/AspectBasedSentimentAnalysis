@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet"  href="./static/main.css">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.bundle.js"></script>
+</head>
+<body id="body1">
+    <div id="vue-app">
+        <div id="header">
+            <span class="span1">Hotel Review Sentiment Analysis</span>
+        </div>
+        <div class="frame">
+            <span class="span2">Select your text file (.csv)</span><br><br>
+            <!-- <a v-bind:href="visualization" class="button1">Start</a> -->
+            <!-- {{visualization}} -->
+            <form action="/"  method='POST'>
+                <input type="file" name="file" accept=".csv,.xlsx" >
+                <input type="submit" value="Submit" id = "submit"name="submit">
+            </form>
+        </div>
+    </div> 
+    <script src="js/main.js"></script>
+</body>
+</html>
