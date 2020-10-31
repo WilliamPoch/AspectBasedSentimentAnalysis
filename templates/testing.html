@@ -6,6 +6,7 @@
     <title>Testing</title>
     <link rel="stylesheet" href="./static/main.css">
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Donegal+One&family=Fjalla+One&family=Kenia&family=Modak&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.bundle.js"></script>
@@ -13,9 +14,9 @@
 <body id="body2">
     <div id="vue-testing">
         <div class="list">
-            <div class="item1"><a href ="{{url_for('visualization')}}" class="span_selected">Visualization</a></div>
+            <div class="item1"><a href ="{{url_for('visualization')}}" class="span_list">Visualization</a></div>
             <div class="item2"><a href ="{{url_for('detail')}}" class="span_list">Details</a></div>
-            <div class="item3"><a href ="{{url_for('testing')}}" class="span_list">Testing</a></div>
+            <div class="item3"><a href ="{{url_for('testing')}}" class="span_selected">Testing</a></div>
         </div>
 
         <div class="boxes">
@@ -28,7 +29,9 @@
                     <input class="input" type="text" name = "sentence4" id = "sentence4"></input><br>
                     <input class="input" type="text" name = "sentence5" id = "sentence5"></input><br>
                 </div>
-                <input type="submit" value="submit" id = "submit" name="submit"></input>            
+                <div class="button2">
+                <input type="submit" value="submit" id = "submit" name="submit"></input>   
+            </div>         
             </form>
             
             <div class="box3" v-if="visual_tf">

@@ -52,6 +52,16 @@ new Vue({
             this.visual_aspect3=data.body.aspect3;
             this.visual_aspect4=data.body.aspect4;
         })
+		
+		this.$http.get('https://aspectbased-sentiment-analysis.firebaseio.com/testing.json').then(function(data){
+            console.log(data);
+            this.visual_tf = data.ok;
+            this.visual_overall2=data.body.overall;
+            this.visual_aspect12=data.body.aspect1;
+            this.visual_aspect22=data.body.aspect2;
+            this.visual_aspect32=data.body.aspect3;
+            this.visual_aspect42=data.body.aspect4;
+        })
 
     },
 
@@ -64,7 +74,7 @@ new Vue({
             datasets: [
                 {
                     data: [this.visual_overall.positive, this.visual_overall.neutral, this.visual_overall.negative],
-                    backgroundColor: ['green', 'gray', 'pink']
+                    backgroundColor: ['rgba(34,139,34,1)', 'rgba(255, 164, 76,1)', 'rgba(178,34,34,1)']
                 }
             ]
         };
@@ -94,7 +104,7 @@ new Vue({
             datasets: [
                 {
                     data: [this.visual_aspect1.positive, this.visual_aspect1.neutral, this.visual_aspect1.negative],
-                    backgroundColor: ['rgba(34,139,34,1)', 'rgba(245,222,179,1)', 'rgba(178,34,34,1)']
+                    backgroundColor: ['rgba(34,139,34,1)', 'rgba(255, 164, 76,1)', 'rgba(178,34,34,1)']
                 }
             ]
         };
@@ -102,7 +112,7 @@ new Vue({
         var options1 = {
             title: {
                 display: true,
-                text: 'Aspect1',
+                text: 'Staff',
                 // fontColor: 'indigo',
                 fontSize: '15'
             },
@@ -123,7 +133,7 @@ new Vue({
             datasets: [
                 {
                     data: [this.visual_aspect2.positive, this.visual_aspect2.neutral, this.visual_aspect2.negative],
-                    backgroundColor: ['rgba(34,139,34,1)', 'rgba(245,222,179,1)', 'rgba(178,34,34,1)']
+                    backgroundColor: ['rgba(34,139,34,1)', 'rgba(255, 164, 76,1)', 'rgba(178,34,34,1)']
                 }
             ]
         };
@@ -131,7 +141,7 @@ new Vue({
         var options2 = {
             title: {
                 display: true,
-                text: 'Aspect2',
+                text: 'Amenities',
                 // fontColor: 'indigo',
                 fontSize: '15'
             },
@@ -152,7 +162,7 @@ new Vue({
             datasets: [
                 {
                     data: [this.visual_aspect3.positive, this.visual_aspect3.neutral, this.visual_aspect3.negative],
-                    backgroundColor: ['rgba(34,139,34,1)', 'rgba(245,222,179,1)', 'rgba(178,34,34,1)']
+                    backgroundColor: ['rgba(34,139,34,1)', 'rgba(255, 164, 76,1)', 'rgba(178,34,34,1)']
                 }
             ]
         };
@@ -160,7 +170,7 @@ new Vue({
         var options3 = {
             title: {
                 display: true,
-                text: 'Aspect3',
+                text: 'Condition',
                 // fontColor: 'indigo',
                 fontSize: '15'
             },
@@ -182,7 +192,7 @@ new Vue({
             datasets: [
                 {
                     data: [this.visual_aspect4.positive, this.visual_aspect4.neutral, this.visual_aspect4.negative],
-                    backgroundColor: ['rgba(34,139,34,1)', 'rgba(245,222,179,1)', 'rgba(178,34,34,1)']
+                    backgroundColor: ['rgba(34,139,34,1)', 'rgba(255, 164, 76,1)', 'rgba(178,34,34,1)']
                 }
             ]
         };
@@ -190,7 +200,7 @@ new Vue({
         var options4 = {
             title: {
                 display: true,
-                text: 'Aspect4',
+                text: 'Cleanliness',
                 // fontColor: 'indigo',
                 fontSize: '15'
             },
@@ -203,7 +213,6 @@ new Vue({
                 data: data4,
                 options: options4
         });
-
 
     }
 })

@@ -61,7 +61,7 @@ var vm = new Vue({
             // profile barchart
             var type= 'bar';
             var data = {
-                labels: ['Overall','Aspect1','Aspect2','Aspect3','Aspect4'],
+                labels: ['Overall','Staff','Amenities','Condition','Cleanliness'],
                 datasets: [
                     {
                         label: 'Negative',
@@ -87,7 +87,7 @@ var vm = new Vue({
                     {
                         label: 'Neutral',
                         data: [this.visual_overall.neutral, this.visual_aspect1.neutral, this.visual_aspect2.neutral, this.visual_aspect3.neutral, this.visual_aspect4.neutral ],
-                        borderColor: 'yellow',
+                        borderColor: 'orange',
                         borderWidth: 1,
                         // fill: true,
                         // backgroundColor: 'rgba(128,0,0,0)',
@@ -133,7 +133,7 @@ var vm = new Vue({
                 datasets: [
                     {
                         data: [this.visual_overall.positive, this.visual_overall.neutral, this.visual_overall.negative],
-                        backgroundColor: ['green', 'gray', 'pink']
+                        backgroundColor:  ['rgba(34,139,34,1)', 'rgba(255, 164, 76,1)', 'rgba(178,34,34,1)']
                     }
                 ]
             };
@@ -163,7 +163,7 @@ var vm = new Vue({
                 datasets: [
                     {
                         data: [this.visual_aspect1.positive, this.visual_aspect1.neutral, this.visual_aspect1.negative],
-                        backgroundColor: ['rgba(34,139,34,1)', 'rgba(245,222,179,1)', 'rgba(178,34,34,1)']
+                        backgroundColor: ['rgba(34,139,34,1)', 'rgba(255, 164, 76,1)', 'rgba(178,34,34,1)']
                     }
                 ]
             };
@@ -171,7 +171,7 @@ var vm = new Vue({
             var options1 = {
                 title: {
                     display: true,
-                    text: 'Aspect1',
+                    text: 'Staff',
                     // fontColor: 'indigo',
                     fontSize: '15'
                 },
@@ -192,7 +192,7 @@ var vm = new Vue({
                 datasets: [
                     {
                         data: [this.visual_aspect2.positive, this.visual_aspect2.neutral, this.visual_aspect2.negative],
-                        backgroundColor: ['rgba(34,139,34,1)', 'rgba(245,222,179,1)', 'rgba(178,34,34,1)']
+                        backgroundColor: ['rgba(34,139,34,1)', 'rgba(255, 164, 76,1)', 'rgba(178,34,34,1)']
                     }
                 ]
             };
@@ -200,7 +200,7 @@ var vm = new Vue({
             var options2 = {
                 title: {
                     display: true,
-                    text: 'Aspect2',
+                    text: 'Amenities',
                     // fontColor: 'indigo',
                     fontSize: '15'
                 },
@@ -221,7 +221,7 @@ var vm = new Vue({
                 datasets: [
                     {
                         data: [this.visual_aspect3.positive, this.visual_aspect3.neutral, this.visual_aspect3.negative],
-                        backgroundColor: ['rgba(34,139,34,1)', 'rgba(245,222,179,1)', 'rgba(178,34,34,1)']
+                        backgroundColor: ['rgba(34,139,34,1)', 'rgba(255, 164, 76,1)', 'rgba(178,34,34,1)']
                     }
                 ]
             };
@@ -229,7 +229,7 @@ var vm = new Vue({
             var options3 = {
                 title: {
                     display: true,
-                    text: 'Aspect3',
+                    text: 'Condition',
                     // fontColor: 'indigo',
                     fontSize: '15'
                 },
@@ -251,7 +251,7 @@ var vm = new Vue({
                 datasets: [
                     {
                         data: [this.visual_aspect4.positive, this.visual_aspect4.neutral, this.visual_aspect4.negative],
-                        backgroundColor: ['rgba(34,139,34,1)', 'rgba(245,222,179,1)', 'rgba(178,34,34,1)']
+                        backgroundColor: ['rgba(34,139,34,1)', 'rgba(255, 164, 76,1)', 'rgba(178,34,34,1)']
                     }
                 ]
             };
@@ -259,7 +259,7 @@ var vm = new Vue({
             var options4 = {
                 title: {
                     display: true,
-                    text: 'Aspect4',
+                    text: 'Cleanliness',
                     // fontColor: 'indigo',
                     fontSize: '15'
                 },

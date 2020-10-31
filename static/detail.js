@@ -1,4 +1,34 @@
+ var firebaseConfig = {
+     apiKey: "AIzaSyDO0EYmkcKCwSS2XJFMj5DT8TL_KMYgkAs",
+     authDomain: "aspectbased-sentiment-analysis.firebaseapp.com",
+     databaseURL: "https://aspectbased-sentiment-analysis.firebaseio.com",
+     projectId: "aspectbased-sentiment-analysis",
+     storageBucket: "aspectbased-sentiment-analysis.appspot.com",
+     messagingSenderId: "473619564785",
+     appId: "1:473619564785:web:532bd8651d5862a3948150",
+     measurementId: "G-9J2G4PEDFT"
+ };
+//var firebaseConfig = {
+//    apiKey: "AIzaSyBtuqcloyYj0SIkUinoig7lk9BWNqd8maQ",
+//    authDomain: "willps-8539d.firebaseapp.com",
+//    databaseURL: "https://willps-8539d.firebaseio.com",
+//    projectId: "willps-8539d",
+//    storageBucket: "willps-8539d.appspot.com",
+//    messagingSenderId: "950733704920",
+//    appId: "1:950733704920:web:89dae2c2e72877addad1ad",
+//    measurementId: "G-EWVJ3VJ8SW"
+//  };
 
+// var firebaseConfig = {
+//     apiKey: "AIzaSyAsBGCnFvpuYTti3U-gM2bqSpMJ3lHJuEs",
+//     authDomain: "test-9f759.firebaseapp.com",
+//     databaseURL: "https://test-9f759.firebaseio.com",
+//     projectId: "test-9f759",
+//     storageBucket: "test-9f759.appspot.com",
+//     messagingSenderId: "284236069556",
+//     appId: "1:284236069556:web:3ea7a89d4a3b899e72f5e1",
+//     measurementId: "G-W8QPS9V10V"
+// };
 
   // Initialize Firebase
 firebase.initializeApp(firebaseConfig);

@@ -104,13 +104,15 @@ html{
     color:#FFFFFF;
     /* font-weight:bold; */
     font-size:150%;
-    text-decoration:none
+    text-decoration:none;
+    font-family: 'Donegal One', serif;
 }
 .span_selected{
     color:#FFFFFF;
     font-weight:bold;
     font-size:180%;
-    text-decoration:none
+    text-decoration:none;
+    font-family: 'Donegal One', serif;
 }
 
 .boxes{
@@ -320,6 +322,10 @@ table td.r, table th.r {
 }
 
 
+.table-class  {
+  font-family: 'Donegal One', serif;
+}
+
 .table100-head th{
   font-family: OpenSans-Regular;
   font-size: 18px;
@@ -347,18 +353,23 @@ tbody tr:hover {
 }
 
 .column1 {
+  font-family: 'Donegal One', serif;
   width: 160px;
   padding-left: 40px;
 }
 
 .column2 {
+  font-family: 'Donegal One', serif;
+  /* font-family: 'Anton', sans-serif; */
+  
   width: 160px;
 }
 
 .column3 {
+  /* font-family: 'Fjalla One', sans-serif; */
+  font-family: 'Donegal One', serif;
   width: 200px;
 }
-
 .column4 {
   width: 110px;
   text-align: right;
@@ -387,9 +398,6 @@ tbody tr:hover {
 
 .button2{
     position: absolute; right:15%;top: 1.5%;
-    font-size:200%;
-    border-radius: 10px;
-    border: 1px solid #707070;
     opacity: 1;
     margin-top: 3%;
 }

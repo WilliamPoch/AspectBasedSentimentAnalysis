@@ -6,6 +6,7 @@
     <title>Details</title>
     <link rel="stylesheet" href="./static/main.css">
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Donegal+One&family=Fjalla+One&family=Kenia&family=Modak&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
     <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
@@ -16,8 +17,8 @@
 <body id="body2">
     <div id="vue-detail">
         <div class="list">
-            <div class="item1"><a href ="{{url_for('visualization')}}" class="span_selected">Visualization</a></div>
-            <div class="item2"><a href ="{{url_for('detail')}}" class="span_list">Details</a></div>
+            <div class="item1"><a href ="{{url_for('visualization')}}" class="span_list">Visualization</a></div>
+            <div class="item2"><a href ="{{url_for('detail')}}" class="span_selected">Details</a></div>
             <div class="item3"><a href ="{{url_for('testing')}}" class="span_list">Testing</a></div>
         </div>
 
@@ -71,11 +72,12 @@
                     <div class="table100">
                         <div id="outer-container" class="outer-container">
                             <div id="inner-container" class="inner-container">
-                                <table >
+                                <table class="table-class">
+                                    <span style="font-family: 'Donegal One', serif;">
                                     <thead>
                                         <div>
                                             <tr class="table100-head">
-                                            <th class="column1">Aspect</th>
+                                            <th class="column1"> Aspect</th>
                                                 <th class="column2">Sentence</th>  
                                                 <th class="column3">Overall</th>      
                                             </tr>
@@ -87,51 +89,79 @@
                                         
                                         {% if check_sentiment(checkbox_s,item.overall) and aspect_IS_null(item.a1,item.a2,item.a3,item.a4) and contains_aspect(checkbox_a) %}   
                                         <tr>  
-                                            <td class="column1" >{{ item.a1 }} {{ item.a2 }} {{ item.a3 }} {{ item.a4 }}</td>
+                                            <td class="column1" ></td>
                                             <td class="column2" >{{ item.sentence }}</td>
-                                            <td class="column3" >{{ item.overall }}</td>
+                                            <td class="column3" >
+                                                {% if item.overall== "positive" %}
+                                                <span style="color:green">positive</span>
+                                                {% elif item.overall== "neutral" %}
+                                                <span style="color:orange">neutral</span>
+                                                {% elif item.overall== "negative" %}
+                                                <span style="color:red">negative</span>
+                                                {% endif %}</td>
                                             
                                         </tr>
-
+                                        {% elif (check_sentiment(checkbox_s,item.overall)) and not (aspect_IS_null(item.a1,item.a2,item.a3,item.a4)) and (check_aspect(checkbox_a,item.a1,item.a2,item.a3,item.a4)) %}
                                         <tr>
-                                            {% elif (check_sentiment(checkbox_s,item.overall)) and not (aspect_IS_null(item.a1,item.a2,item.a3,item.a4)) and (check_aspect(checkbox_a,item.a1,item.a2,item.a3,item.a4)) %}    
+                                                
                                             <td class="column1" >
                                                 {% if item.a1 == "positive" %}
-                                                <img style="width: 8%;height: 30%;" src="./static/img/w1.png"></img>
+                                                <span style="color:Green"> Staff </span>
+                                                <!-- <img style="width: 8%;height: 30%;" src="./static/img/w1.png"></img> -->
                                                 {% elif item.a1 == "negative" %}
-                                                <img style="width: 8%;height: 30%;" src="./static/img/b1.png"></img>
+                                                <span style="color:Red"> Staff </span>
+                                                <!-- <img style="width: 8%;height: 30%;" src="./static/img/b1.png"></img> -->
                                                 {% elif item.a1 == "neutral" %}
-                                                <img style="width: 8%;height: 30%;" src="./static/img/g1.png"></img>
+                                                <span style="color:Orange"> Staff </span>
+                                                <!-- <img style="width: 8%;height: 30%;" src="./static/img/g1.png"></img> -->
                                                 {% endif %}
                                                 {% if item.a2 == "positive" %} 
-                                                <img style="width: 8%;height: 30%;" src="./static/img/w2.png"></img>
+                                                <span style="color:Green"> Amenities </span>
+                                                <!-- <img style="width: 8%;height: 30%;" src="./static/img/w2.png"></img> -->
                                                 {% elif item.a2 == "negative" %} 
-                                                <img style="width: 8%;height: 30%;" src="./static/img/b2.png"></img>
+                                                <span style="color:Red"> Amenities </span>
+                                                <!-- <img style="width: 8%;height: 30%;" src="./static/img/b2.png"></img> -->
                                                 {% elif item.a2 == "neutral" %} 
-                                                <img style="width: 8%;height: 30%;" src="./static/img/g2.png"></img>
+                                                <span style="color:Orange"> Amenities </span>
+                                                <!-- <img style="width: 8%;height: 30%;" src="./static/img/g2.png"></img> -->
                                                 {% endif %}
                                                 {% if item.a3 == "positive" %} 
-                                                <img style="width: 8%;height: 30%;" src="./static/img/w3.png"></img>
+                                                <span style="color:Green"> Condition </span>
+                                                <!-- <img style="width: 8%;height: 30%;" src="./static/img/w3.png"></img> -->
                                                 {% elif item.a3 == "negative" %} 
-                                                <img style="width: 8%;height: 30%;" src="./static/img/b3.png"></img>
+                                                <span style="color:Red"> Condition </span>
+                                                <!-- <img style="width: 8%;height: 30%;" src="./static/img/b3.png"></img> -->
                                                 {% elif item.a3 == "neutral" %} 
-                                                <img style="width: 8%;height: 30%;" src="./static/img/g3.png"></img>
+                                                <span style="color:Orange"> Condition </span>
+                                                <!-- <img style="width: 8%;height: 30%;" src="./static/img/g3.png"></img> -->
                                                 {% endif %}
                                                 {% if item.a4 == "positive" %} 
-                                                <img style="width: 8%;height: 30%;" src="./static/img/w4.png"></img>
+                                                <span style="color:Green"> Cleanliness </span>
+                                                <!-- <img style="width: 8%;height: 30%;" src="./static/img/w4.png"></img> -->
                                                 {% elif item.a4 == "negative" %} 
-                                                <img style="width: 8%;height: 30%;" src="./static/img/b4.png"></img>
+                                                <span style="color:Red"> Cleanliness </span>
+                                                <!-- <img style="width: 8%;height: 30%;" src="./static/img/b4.png"></img> -->
                                                 {% elif item.a4 == "positive" %} 
-                                                <img style="width: 8%;height: 30%;" src="./static/img/g4.png"></img>
+                                                <span style="color:Green"> Cleanliness </span>
+                                                <!-- <img style="width: 8%;height: 30%;" src="./static/img/g4.png"></img> -->
                                                 {% endif %}
                                             </td>
                                             <td class="column2" >{{ item.sentence }}</td>
-                                            <td class="column3" >{{ item.overall }}</td>
+
+                                            <td class="column3" >  
+                                                {% if item.overall== "positive" %}
+                                                    <span style="color:green">positive</span>
+                                                    {% elif item.overall== "neutral" %}
+                                                    <span style="color:orange">neutral</span>
+                                                    {% elif item.overall== "negative" %}
+                                                    <span style="color:red">negative</span>
+                                                    {% endif %}
+                                                    </td>
                                         {% endif %}
                                         </tr>
                                     {% endfor %}
                                     </tbody>
-                                    
+                                </span>
                                 </table>
                             </div>
                         </div>

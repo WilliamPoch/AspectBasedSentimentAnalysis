@@ -86,7 +86,7 @@ def check_sentiment(checkbox_s, sentiment):
 
 def check_aspect(checkbox_a,a1,a2,a3,a4):
     for i in checkbox_a:
-        if (a1 != None and i =='a1' ) or (a2 != None and i =='a2' ) or (a3 != None and i =='a3' ) or (a4 != None and i =='a4' ):
+        if (a1 != "" and i =='a1' ) or (a2 != "" and i =='a2' ) or (a3 != "" and i =='a3' ) or (a4 != "" and i =='a4' ):
             return True
     return False
 
@@ -97,7 +97,7 @@ def contains_aspect(checkbox_a):
     return False
 
 def aspect_IS_null(a1,a2,a3,a4):
-    if a1 == None and a2 == None and a3 == None and a4 == None:
+    if a1 == "" and a2 == "" and a3 == "" and a4 == "":
         return True
     else:
         return False
@@ -145,7 +145,7 @@ def visualization():
 def detail():
     database = firestore.client()
     col_ref = database.collection('details') # col_ref is CollectionReference
-    results = col_ref.order_by('overall',direction='DESCENDING').get()
+    results = col_ref.order_by('sentence',direction='DESCENDING').get()
     data = []
     for item in results:
         data.append(item.to_dict())
@@ -322,7 +322,7 @@ def index():
             print('Preprocessing...')
             reviews_df = preprocess(df)
             print('Classifying aspects...')
-            reviews_df = classifiers.aspect_classifier(reviews_df, 0.06)
+            reviews_df = classifiers.aspect_classifier(reviews_df, 0.1)
             print('Classifying sentiments...')
             reviews_df = classifiers.sentiments(reviews_df)
             print('Done!')
